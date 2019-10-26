@@ -15,10 +15,12 @@ function searchCountries() {
 
 function showCountriesList(resp) {
     countriesList.innerHTML = '';
+    var fragment = document.createDocumentFragment();
     resp.forEach(function(item){
         var liEl = document.createElement('li');
         liEl.innerText = item.name + ' Stolica: ' + item.capital;
-        countriesList.appendChild(liEl);
+        fragment.appendChild(liEl);
     });
+    countriesList.appendChild(fragment);
 }
 
